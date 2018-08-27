@@ -1,14 +1,14 @@
 @function test1() {
-    @return test5output;
+    @return 'test1 output';
 }
 $test1: get-function(test1);
 $test2: (
-    test2a: get-function(test1),
-    test2b: get-function(test1),
+    get-function(test1),
+    get-function(test1),
 );
 $test3: (
-    get-function(test1),
-    get-function(test1),
+    test3a: get-function(test1),
+    test3b: get-function(test1),
 );
 
 @debug #{'test1 {'};
@@ -21,11 +21,11 @@ $test3: (
 @debug #{'  type-of:' type-of($test2)};
 @debug #{'  inspect:' inspect($test2)};
 @debug #{'  logged: ' $test2};
-@debug #{'  call  : ' call(map-get($test2,'test2a')), call(map-get($test2,'test2b'))};
+@debug #{'  call:   ' call(nth($test2,1)), call(nth($test2,2))};
 @debug #{'}'};
 @debug #{'test3 {'};
 @debug #{'  type-of:' type-of($test3)};
 @debug #{'  inspect:' inspect($test3)};
 @debug #{'  logged: ' $test3};
-@debug #{'  call  : ' call(nth($test3,1)), call(nth($test3,2))};
+@debug #{'  call:   ' call(map-get($test3,'test3a')), call(map-get($test3,'test3b'))};
 @debug #{'}'};

@@ -1,7 +1,7 @@
 {
   "scripts": {
     "sass": "node-sass test.scss -watch",
-    "sass-json": "node test.js"
+    "sass-extract": "node test.js"
   },
   "dependencies": {
     "node-sass": "^4.9.3",
