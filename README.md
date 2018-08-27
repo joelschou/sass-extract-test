@@ -51,3 +51,7 @@ Feel free to comment out different chunks of `test.scss` to see that the error t
 ## Next steps
 
 I will continue to poke around in the guts of **sass-extract** and possibly even **node-sass**, but I find myself quickly over my head any time I do that. If I stumble upon a fix, I'll definitely update.
+
+### Updates
+
+- `2018-08-27 @ 2:25 CDT`: It appears this line in **node-sass** is where things go haywire: [265 in index.js](https://github.com/sass/node-sass/blob/master/lib/index.js#L265). The `getValue()` method is returning an error on the function created by **sass-extract** in [createInjection in inject.js](https://github.com/jgranstrom/sass-extract/blob/master/src/inject.js#L12). What I can't tell is _why_.
