@@ -4,7 +4,7 @@
     "sass-extract": "node test.js"
   },
   "dependencies": {
-    "node-sass": "^4.9.3",
+    "node-sass": "^4.12.0",
     "sass-extract": "^2.1.0"
   }
 }
